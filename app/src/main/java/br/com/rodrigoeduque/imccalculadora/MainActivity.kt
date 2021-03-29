@@ -1,5 +1,6 @@
 package br.com.rodrigoeduque.imccalculadora
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             return when {
                 resultadoImc < 18.5 -> "Estado : Magreza"
                 resultadoImc < 24.9 -> "Estado : Normal"
-                resultadoImc < 30.0 -> "Estado : SobrePeso"
+                resultadoImc < 30.0 -> ("Estado : SobrePeso")
                 else -> "Estado : Obesidade"
             }
 
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             var resultadoPesoAltura = relacaoAlturaPeso(resultadoImc)
 
             resultado.text = resultadoPesoAltura.toString() + "\n" + "Indice de Massa Corporal : " + resultadoImc
+            resultado.setTextColor(Color.BLUE)
 
 
         }
